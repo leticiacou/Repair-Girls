@@ -119,7 +119,7 @@ img {
   color: var(--pink);
 }
 
-.btn-login-nav {
+.nav-links a.btn-login-nav {
   background: linear-gradient(135deg, var(--pink), var(--orange));
   color: var(--white) !important;
   padding: 0.6rem 1.5rem;
