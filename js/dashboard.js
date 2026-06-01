@@ -42,6 +42,21 @@ const professionalNames = [
   'Patrícia Alves', 'Renata Oliveira', 'Aline Costa'
 ];
 
+const servicePrices = {
+  'Elétrica': { base: 120, max: 350 },
+  'Hidráulica': { base: 150, max: 400 },
+  'Pintura': { base: 200, max: 600 },
+  'Montagem de Móveis': { base: 100, max: 300 },
+  'Reparos Gerais': { base: 90, max: 250 },
+  'Manutenção Preventiva': { base: 250, max: 500 }
+};
+
+function getPrice(service) {
+  const p = servicePrices[service];
+  if (!p) return 'Consultar';
+  return 'R$ ' + p.base + ' – R$ ' + p.max;
+}
+
 function randomProfessional() {
   return professionalNames[Math.floor(Math.random() * professionalNames.length)];
 }
@@ -86,6 +101,7 @@ function renderBookingCard(booking) {
         <p>📅 ${formatDate(booking.date)} — ${booking.time}</p>
         <p>📍 ${booking.address}</p>
         <p>👩‍🔧 Profissional: ${booking.professional}</p>
+        <p>💰 Estimativa: <strong>${booking.price || getPrice(booking.service)}</strong></p>
         ${booking.description ? `<p style="margin-top:0.4rem;font-size:0.85rem;color:var(--text-light);">${booking.description}</p>` : ''}
       </div>
       <div style="display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap;">
@@ -179,20 +195,39 @@ if (newBookingForm) {
     dateInput.setAttribute('min', today);
   }
 
+  // Show price estimate when service changes
+  const bookingServiceSelect = document.getElementById('bookingService');
+  const priceEstimateGroup = document.getElementById('priceEstimateGroup');
+  const priceEstimateEl = document.getElementById('priceEstimate');
+
+  if (bookingServiceSelect) {
+    bookingServiceSelect.addEventListener('change', () => {
+      const service = bookingServiceSelect.value;
+      if (service && servicePrices[service]) {
+        priceEstimateEl.textContent = getPrice(service);
+        priceEstimateGroup.style.display = 'block';
+      } else {
+        priceEstimateGroup.style.display = 'none';
+      }
+    });
+  }
+
   newBookingForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const session = Auth.getSession();
     if (!session) return;
 
+    const selectedService = document.getElementById('bookingService').value;
     const booking = {
       id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
       userId: session.id,
-      service: document.getElementById('bookingService').value,
+      service: selectedService,
       date: document.getElementById('bookingDate').value,
       time: document.getElementById('bookingTime').value,
       address: document.getElementById('bookingAddress').value,
       description: document.getElementById('bookingDesc').value,
       professional: randomProfessional(),
+      price: getPrice(selectedService),
       status: 'upcoming',
       createdAt: new Date().toISOString()
     };
