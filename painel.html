@@ -17,6 +17,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Início</a></li>
       <li><a href="como-funciona.html">Como Funciona</a></li>
+      <li><a href="materiais.html">Materiais</a></li>
       <li><a href="contato.html">SAQ &amp; Contato</a></li>
       <li><a href="painel.html" class="active btn-login-nav" id="openLogin">Meu Painel</a></li>
     </ul>
@@ -28,8 +29,14 @@
   <!-- DASHBOARD -->
   <div class="dashboard" id="dashboardArea">
     <div class="dashboard-header">
-      <h1>Olá, <span id="userName">Visitante</span>!</h1>
-      <button class="btn-logout" id="logoutBtn">Sair da conta</button>
+      <div class="dashboard-user">
+        <div class="user-avatar" id="userAvatar">?</div>
+        <h1>Olá, <span id="userName">Visitante</span>!</h1>
+      </div>
+      <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+        <button class="btn-logout" id="profileBtn" type="button">Meu Perfil</button>
+        <button class="btn-logout" id="logoutBtn">Sair da conta</button>
+      </div>
     </div>
 
     <!-- TABS -->
@@ -71,6 +78,11 @@
             <div class="price-tag" id="priceEstimate" style="font-size:1.1rem;"></div>
             <p class="price-estimate">O valor final pode variar conforme a complexidade do serviço.</p>
           </div>
+          <div class="form-group" id="professionalPickerGroup" style="display:none;">
+            <label>Quem vai realizar o serviço?</label>
+            <div class="pro-picker" id="professionalPicker"></div>
+            <p class="price-estimate" id="professionalPickerHint">Escolha uma profissional ou deixe a Repair Girls escolher para você.</p>
+          </div>
           <div class="form-group">
             <label for="bookingDate">Data</label>
             <input type="date" id="bookingDate" required />
@@ -84,8 +96,14 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="bookingAddress">Endereço</label>
-            <input type="text" id="bookingAddress" placeholder="Rua, número, bairro — Santo André, SP" required />
+            <label for="bookingAddress">Endereço do serviço</label>
+            <div class="location-row">
+              <input type="text" id="bookingAddress" placeholder="Rua, número, bairro — Cidade, UF" required />
+              <button type="button" class="btn-locate" data-locate="booking" data-locate-text="bookingAddress" data-locate-address title="Usar minha localização">📍</button>
+            </div>
+            <input type="hidden" id="bookingLat" />
+            <input type="hidden" id="bookingLng" />
+            <small class="form-note">Toque em 📍 para preencher com sua localização real — evita erro de digitação.</small>
           </div>
           <div class="form-group">
             <label for="bookingDesc">Descreva o problema</label>
@@ -94,6 +112,56 @@
           <button type="submit" class="btn btn-primary" style="width:100%;">Agendar serviço</button>
         </form>
       </div>
+    </div>
+  </div>
+
+  <!-- PROFILE (área separada, fora das abas de agendamento) -->
+  <div class="dashboard" id="profileArea" style="display:none;">
+    <div class="new-booking-form profile-card">
+        <button class="btn-logout" id="profileBackBtn" type="button" style="margin-bottom:1.2rem;">← Voltar</button>
+        <div class="profile-head">
+          <div class="profile-avatar" id="profileAvatar">?</div>
+          <div class="profile-head-info">
+            <strong id="profileDisplayName"></strong>
+            <span id="profileDisplayEmail"></span>
+            <span class="profile-member-since" id="profileMemberSince"></span>
+          </div>
+        </div>
+        <h3>Editar perfil</h3>
+        <form id="profileForm">
+          <div class="form-group">
+            <label for="profileName">Nome completo</label>
+            <input type="text" id="profileName" required />
+          </div>
+          <div class="form-group">
+            <label for="profileEmail">E-mail</label>
+            <input type="email" id="profileEmail" disabled />
+            <small class="form-note">O e-mail é usado para login e não pode ser alterado.</small>
+          </div>
+          <div class="form-group">
+            <label for="profilePhone">Telefone / WhatsApp</label>
+            <input type="tel" id="profilePhone" placeholder="(11) 90000-0000" />
+          </div>
+          <div class="form-group">
+            <label for="profileLocation">Cidade / Localização</label>
+            <div class="location-row">
+              <input type="text" id="profileLocation" placeholder="Ex.: Campinas, SP" />
+              <button type="button" class="btn-locate" data-locate="profile" title="Usar minha localização">📍</button>
+            </div>
+            <input type="hidden" id="profileLat" />
+            <input type="hidden" id="profileLng" />
+            <small class="form-note">Toque em 📍 para detectar sua localização automaticamente — assim recomendamos só as profissionais mais próximas.</small>
+          </div>
+          <div class="form-group">
+            <label for="profilePhotoUrl">Foto de perfil (link da imagem)</label>
+            <input type="url" id="profilePhotoUrl" placeholder="https://..." />
+          </div>
+          <div class="form-group">
+            <label for="profilePhotoFile">Ou envie uma foto do dispositivo</label>
+            <input type="file" id="profilePhotoFile" accept="image/*" />
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Salvar perfil</button>
+        </form>
     </div>
   </div>
 
@@ -147,6 +215,20 @@
             <label for="regPassword">Senha</label>
             <input type="password" id="regPassword" placeholder="Mínimo 6 caracteres" required minlength="6" />
           </div>
+          <div class="form-group">
+            <label for="regPhone">Telefone / WhatsApp (opcional)</label>
+            <input type="tel" id="regPhone" placeholder="(11) 90000-0000" />
+          </div>
+          <div class="form-group">
+            <label for="regLocation">Cidade / Localização</label>
+            <div class="location-row">
+              <input type="text" id="regLocation" placeholder="Ex.: Campinas, SP" required />
+              <button type="button" class="btn-locate" data-locate="reg" title="Usar minha localização">📍</button>
+            </div>
+            <input type="hidden" id="regLat" />
+            <input type="hidden" id="regLng" />
+            <small class="form-note">Toque em 📍 para detectar sua localização — assim recomendamos só as profissionais mais próximas.</small>
+          </div>
           <button type="submit" class="btn btn-primary" style="width:100%;">Criar conta</button>
         </form>
         <p class="auth-toggle">
@@ -164,6 +246,7 @@
   </footer>
 
   <script src="js/auth.js"></script>
+  <script src="js/professionals.js"></script>
   <script src="js/app.js"></script>
   <script src="js/dashboard.js"></script>
 </body>

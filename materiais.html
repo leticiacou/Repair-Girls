@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materiais Sustentáveis — Repair Girls</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">Repair<span>Girls</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="como-funciona.html">Como Funciona</a></li>
+      <li><a href="materiais.html" class="active">Materiais</a></li>
+      <li><a href="contato.html">SAQ &amp; Contato</a></li>
+      <li><a href="#" class="btn-login-nav" id="openLogin">Entrar</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="hero" style="min-height:45vh;">
+    <div class="hero-split">
+      <div class="hero-content">
+        <h1>Materiais sustentáveis para sua casa</h1>
+        <p>
+          Tintas ecológicas, revestimentos naturais e ferramentas de qualidade
+          para reparos que fazem bem para você e para o planeta.
+        </p>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80&auto=format&fit=crop" alt="Materiais de construção e ferramentas" />
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- AVISO DE REVENDA -->
+  <section class="section" style="padding-bottom:0;">
+    <div class="resale-banner">
+      <div class="resale-icon">🤝</div>
+      <p>
+        <strong>Revenda autorizada:</strong> a Repair Girls é revendedora dos produtos
+        fabricados pela <a href="https://bioseri.com.br" target="_blank" rel="noopener noreferrer">BIOSERI</a>,
+        empresa paulistana especializada em bioarquitetura e construção sustentável.
+        Ao clicar em "Ver na BIOSERI", você é direcionada ao site oficial da fabricante
+        para finalizar a compra com garantia e condições originais.
+      </p>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA A REVENDA -->
+  <section class="section" style="padding-top:1rem;">
+    <h2 class="section-title">Como funciona a compra</h2>
+    <p class="section-subtitle">Simples e transparente — você escolhe, a BIOSERI entrega.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Escolha o material aqui no site</h3>
+          <p>Navegue pelos produtos selecionados pela Repair Girls. Todos são sustentáveis e revisados pela nossa equipe antes de entrarem no catálogo.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Finalize no site oficial da BIOSERI</h3>
+          <p>O botão "Ver na BIOSERI" leva você à página do produto na loja do fabricante, onde o pedido é processado com pagamento e garantia originais.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Receba e, se quiser, agende a instalação</h3>
+          <p>O produto é entregue pela BIOSERI. E se precisar de quem aplique — pintura, assentamento, montagem — basta agendar uma de nossas profissionais pelo painel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- PRODUTOS -->
+  <section class="section" style="background: var(--yellow-pale);">
+    <h2 class="section-title">Catálogo de produtos</h2>
+    <p class="section-subtitle">
+      Seleção de materiais sustentáveis fabricados pela BIOSERI.
+      Preços e disponibilidade conforme o site oficial.
+    </p>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="tintas">Tintas</button>
+      <button class="filter-btn" data-filter="revestimentos">Revestimentos</button>
+      <button class="filter-btn" data-filter="ferramentas">Ferramentas</button>
+      <button class="filter-btn" data-filter="kits">Kits</button>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- TINTAS -->
+      <article class="card product-card" data-category="tintas">
+        <img class="card-img" src="https://bioseri.com.br/wp-content/uploads/2024/11/paleta-7-cores-bioserie.jpg" alt="Tinta ecológica BIOSERI paleta 7 cores" />
+        <span class="product-cat">Tintas</span>
+        <h3>Tintas Ecológicas — Paleta 7 Cores (3,6 L)</h3>
+        <p>Tinta artesanal de base natural, sem solventes agressivos e com baixa emissão de VOCs. 7 cores para ambientes internos e externos.</p>
+        <div class="product-price">R$ 77,17 – R$ 95,78</div>
+        <span class="product-partner">Fabricado por <strong>BIOSERI</strong> · revenda Repair Girls</span>
+        <a class="btn btn-outline product-btn" href="https://bioseri.com.br/produto/tintas-ecologicas-paleta-7-cores-bioseri-36-l/" target="_blank" rel="noopener noreferrer">Ver na BIOSERI ↗</a>
+      </article>
+
+      <article class="card product-card" data-category="tintas">
+        <img class="card-img" src="https://bioseri.com.br/wp-content/uploads/2024/11/paleta-7-cores-bioserie.jpg" alt="Tinta ecológica BIOSERI paleta 7 cores 16L" />
+        <span class="product-cat">Tintas</span>
+        <h3>Tintas Ecológicas — Paleta 7 Cores (16 L)</h3>
+        <p>Formato econômico para projetos maiores: reformas completas, comércios e fachadas. Rendimento excelente e acabamento fosco.</p>
+        <div class="product-price">R$ 342,99 – R$ 425,70</div>
+        <span class="product-partner">Fabricado por <strong>BIOSERI</strong> · revenda Repair Girls</span>
+        <a class="btn btn-outline product-btn" href="https://bioseri.com.br/produto/tintas-ecologicas-paleta-7-cores-bioseri-16l/" target="_blank" rel="noopener noreferrer">Ver na BIOSERI ↗</a>
+      </article>
+
+      <article class="card product-card" data-category="tintas">
+        <img class="card-img" src="https://bioseri.com.br/wp-content/uploads/2024/11/paleta-7-cores-bioserie.jpg" alt="Amostra de tinta ecológica BIOSERI" />
+        <span class="product-cat">Tintas</span>
+        <h3>Tintas Ecológicas — Amostra 30 mL</h3>
+        <p>Teste as 7 cores antes de comprar o balde grande. Ideal para combinar tons com a decoração da sua casa.</p>
+        <div class="product-price">R$ 15,00</div>
+        <span class="product-partner">Fabricado por <strong>BIOSERI</strong> · revenda Repair Girls</span>
+        <a class="btn btn-outline product-btn" href="https://bioseri.com.br/produto/tintas-ecologicas-paleta-7-cores-bioseri-30-ml/" target="_blank" rel="noopener noreferrer">Ver na BIOSERI ↗</a>
+      </article>
+
+      <article class="card product-card" data-category="tintas">
+        <img class="card-img" src="https://bioseri.com.br/wp-content/uploads/2024/10/revestimentos-Bioserie-naturais.jpg" alt="Fundo preparador para tintas BIOSERI" />
+        <span class="product-cat">Tintas</span>
+        <h3>Fundo Preparador para Tintas</h3>
+        <p>Primer natural que prepara a superfície e garante fixação e durabilidade da tinta ecológica. Essencial antes de pintar.</p>
+        <div class="product-price">R$ 148,28</div>
+        <span class="product-partner">Fabricado por <strong>BIOSERI</strong> · revenda Repair Girls</span>
+        <a class="btn btn-outline product-btn" href="https://bioseri.com.br/produto/fundo-preparador-para-tintas/" target="_blank" rel="noopener noreferrer">Ver na BIOSERI ↗</a>
+      </article>
+
+      <!-- REVESTIMENTOS -->
+      <article class="card product-card" data-category="revestimentos">
+        <img class="card-img" src="https://bioseri.com.br/wp-content/uploads/2024/11/Kit-Tadelakt-PRO.jpg" alt="Kit Tadelakt PRO BIOSERI" />
+        <span class="product-cat">Revestimentos</span>
+        <h3>Kit Tadelakt PRO</h3>
+        <p>Revestimento natural à base de cal, respirável e impermeável — perfeito para banheiros e áreas úmidas com estética artesanal.</p>
+        <div class="product-price">R$ 245,16</div>
+        <span class="product-partner">Fabricado por <strong>BIOSERI</strong> · revenda Repair Girls</span>
+        <a class="btn btn-outline product-btn" href="https://bioseri.com.br/produto/kit-tadelakt-pro/" target="_blank" rel="noopener noreferrer">Ver na BIOSERI ↗</a>
+      </article>
+
+      <article class="card product-card" data-category="revestimentos">
+        <img class="card-img" src="https://bioseri.com.br/wp-content/uploads/2024/11/Kit-Tadelakt-SENIOR.jpg" alt="Kit Tadelakt SENIOR BIOSERI" />
+        <span class="product-cat">Revestimentos</span>
+        <h3>Kit Tadelakt SENIOR</h3>
+        <p>Versão de entrada do tadelakt para pequenos projetos e retoques. Material natural, sem chemicals agressivos.</p>
+        <div class="product-price">R$ 208,88</div>
+        <span class="product-partner">Fabricado por <strong>BIOSERI</strong> · revenda Repair Girls</span>
+        <a class="btn btn-outline product-btn" href="https://bioseri.com.br/produto/kit-tadelakt-senior/" target="_blank" rel="noopener noreferrer">Ver na BIOSERI ↗</a>
+      </article>
+
+      <article class="card product-card" data-category="revestimentos">
+        <img class="card-img" src="https://bioseri.com.br/wp-content/uploads/2024/11/Kit-Dorodango-MASTER.jpg" alt="Kit Dorodango MASTER BIOSERI" />
+        <span class="product-cat">Revestimentos</span>
+        <h3>Kit Dorodango MASTER</h3>
+        <p>Revestimento decorativo natural para paredes internas e externas. Textura orgânica com baixo impacto ambiental.</p>
+        <div class="product-price">R$ 299,23</div>
+        <span class="product-partner">Fabricado por <strong>BIOSERI</strong> · revenda Repair Girls</span>
+        <a class="btn btn-outline product-btn" href="https://bioseri.com.br/produto/kit-dorodango-master/" target="_blank" rel="noopener noreferrer">Ver na BIOSERI ↗</a>
+      </article>
+
+      <!-- FERRAMENTAS -->
+      <article class="card product-card" data-category="ferramentas">
+        <img class="card-img" src="https://bioseri.com.br/wp-content/uploads/2024/11/Mexedor-de-tinta-Madeira-Momfort.webp" alt="Mexedor de tinta de madeira BIOSERI" />
+        <span class="product-cat">Ferramentas</span>
+        <h3>Mexedor de Tinta — Madeira</h3>
+        <p>Mixer manual em madeira para preparar tintas e massas. Durável, reutilizável e livre de plástico descartável.</p>
+        <div class="product-price">R$ 14,64</div>
+        <span class="product-partner">Fabricado por <strong>BIOSERI</strong> · revenda Repair Girls</span>
+        <a class="btn btn-outline product-btn" href="https://bioseri.com.br/produto/mexedor-de-tinta-madeira-monfort/" target="_blank" rel="noopener noreferrer">Ver na BIOSERI ↗</a>
+      </article>
+
+      <article class="card product-card" data-category="ferramentas">
+        <img class="card-img" src="https://bioseri.com.br/wp-content/uploads/2024/11/Desempenadeira-Aco-Inox-Momfot-10x24cm-Bioseri.jpg" alt="Desempenadeira de aço BIOSERI" />
+        <span class="product-cat">Ferramentas</span>
+        <h3>Desempenadeira — Aço 14x24cm</h3>
+        <p>Ferramenta de aço carbono para assentamento de revestimentos e regularização de superfícies. Alta durabilidade.</p>
+        <div class="product-price">R$ 68,37</div>
+        <span class="product-partner">Fabricado por <strong>BIOSERI</strong> · revenda Repair Girls</span>
+        <a class="btn btn-outline product-btn" href="https://bioseri.com.br/produto/desempenadeira-aco-14x24cm-momfort/" target="_blank" rel="noopener noreferrer">Ver na BIOSERI ↗</a>
+      </article>
+
+      <article class="card product-card" data-category="ferramentas">
+        <img class="card-img" src="https://bioseri.com.br/wp-content/uploads/2024/11/Espatula-Aco-para-Canto-Externo-215x8x9cm-Momfort.jpg" alt="Espátula de aço BIOSERI" />
+        <span class="product-cat">Ferramentas</span>
+        <h3>Espátula Aço — Canto Externo 21,5cm</h3>
+        <p>Espátula profissional para cantos e acabamentos externos. Essencial para quem busca resultado de obra com menos retrabalho.</p>
+        <div class="product-price">R$ 52,27</div>
+        <span class="product-partner">Fabricado por <strong>BIOSERI</strong> · revenda Repair Girls</span>
+        <a class="btn btn-outline product-btn" href="https://bioseri.com.br/produto/espatula-aco-para-canto-externo-215x8x9cm-momfort/" target="_blank" rel="noopener noreferrer">Ver na BIOSERI ↗</a>
+      </article>
+
+      <article class="card product-card" data-category="ferramentas">
+        <img class="card-img" src="https://bioseri.com.br/wp-content/uploads/2024/11/Pistola-Projecao-Textura-e-Pintura-35-L-Baileu.jpg" alt="Pistola de projeção BIOSERI" />
+        <span class="product-cat">Ferramentas</span>
+        <h3>Pistola Projeção Textura e Pintura 3,5L</h3>
+        <p>Aplicação rápida e uniforme de tintas, texturas e revestimentos. Ideal para projetos maiores com acabamento profissional.</p>
+        <div class="product-price">R$ 743,49</div>
+        <span class="product-partner">Fabricado por <strong>BIOSERI</strong> · revenda Repair Girls</span>
+        <a class="btn btn-outline product-btn" href="https://bioseri.com.br/produto/pistola-projecao-textura-e-pintura-35-l-baileu/" target="_blank" rel="noopener noreferrer">Ver na BIOSERI ↗</a>
+      </article>
+
+      <article class="card product-card" data-category="ferramentas">
+        <img class="card-img" src="https://bioseri.com.br/wp-content/uploads/2024/11/Regua-de-Pedreiro-Baileu-Bioseri.jpg" alt="Régua de pedreiro BIOSERI" />
+        <span class="product-cat">Ferramentas</span>
+        <h3>Régua Multifuncional Alumínio — 1,50m</h3>
+        <p>Régua de alumínio para reboco e nivelamento com múltiplas funções. Leve, precisa e feita para durar anos de obra.</p>
+        <div class="product-price">R$ 190,00</div>
+        <span class="product-partner">Fabricado por <strong>BIOSERI</strong> · revenda Repair Girls</span>
+        <a class="btn btn-outline product-btn" href="https://bioseri.com.br/produto/regua-multifuncional-aluminio-para-reboco-150m-baileu/" target="_blank" rel="noopener noreferrer">Ver na BIOSERI ↗</a>
+      </article>
+
+      <!-- KITS -->
+      <article class="card product-card" data-category="kits">
+        <img class="card-img" src="https://bioseri.com.br/wp-content/uploads/2024/11/Kit-Pintura-PRATIK-1.jpg" alt="Kit Pintura PRATIK BIOSERI" />
+        <span class="product-cat">Kits</span>
+        <h3>Kit Pintura PRATIK</h3>
+        <p>Combo completo para pintura: bandeja, mexedor, brochas, trincha, rolos e suporte. Tudo que você precisa em um só kit.</p>
+        <div class="product-price">R$ 96,92</div>
+        <span class="product-partner">Fabricado por <strong>BIOSERI</strong> · revenda Repair Girls</span>
+        <a class="btn btn-outline product-btn" href="https://bioseri.com.br/produto/kit-pintura-pratik/" target="_blank" rel="noopener noreferrer">Ver na BIOSERI ↗</a>
+      </article>
+
+      <article class="card product-card" data-category="kits">
+        <img class="card-img" src="https://bioseri.com.br/wp-content/uploads/2024/11/Coador-suporte-max.jpg" alt="Kit Coador para tintas PRO BIOSERI" />
+        <span class="product-cat">Kits</span>
+        <h3>Kit Coador para Tintas PRO</h3>
+        <p>Sistema de filtragem que remove impurezas da tinta antes da aplicação — acabamento mais liso e menos desperdício.</p>
+        <div class="product-price">R$ 269,20</div>
+        <span class="product-partner">Fabricado por <strong>BIOSERI</strong> · revenda Repair Girls</span>
+        <a class="btn btn-outline product-btn" href="https://bioseri.com.br/produto/kit-coador-para-tintas-pro/" target="_blank" rel="noopener noreferrer">Ver na BIOSERI ↗</a>
+      </article>
+
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- POR QUE COMPRAR -->
+  <section class="section">
+    <h2 class="section-title">Por que comprar pela Repair Girls?</h2>
+    <p class="section-subtitle">Curadoria sustentável + instalação profissional em um só lugar.</p>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">🌱</div>
+        <h3>Curadoria Sustentável</h3>
+        <p>Cada produto passa pela nossa análise de sustentabilidade: materiais de baixa emissão, durabilidade e descarte consciente.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3>Revenda Consciente</h3>
+        <p>Somos revendedoras oficiais da BIOSERI, uma empresa que produz com responsabilidade ambiental há anos em São Paulo.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👩‍🔧</div>
+        <h3>Instalação Profissional</h3>
+        <p>Comprou o material? Agende uma de nossas profissionais pelo painel para aplicar com segurança e capricho.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="text-align:center;">
+    <h2 class="section-title">Não encontrou o que procura?</h2>
+    <p class="section-subtitle">A BIOSERI tem um catálogo completo de produtos sustentáveis. Visite a loja oficial ou fale com a gente.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://bioseri.com.br/loja/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver loja completa da BIOSERI</a>
+      <a href="contato.html" class="btn btn-outline">Falar com a Repair Girls</a>
+    </div>
+  </section>
+
+  <!-- AUTH MODAL -->
+  <div class="auth-overlay" id="authOverlay">
+    <div class="auth-box">
+      <button class="auth-close" id="authClose">&times;</button>
+      <div id="loginForm">
+        <h2>Bem-vinda de volta!</h2>
+        <p class="auth-subtitle">Entre na sua conta para ver seus agendamentos</p>
+        <div class="auth-error" id="loginError"></div>
+        <form id="loginFormEl">
+          <div class="form-group">
+            <label for="loginEmail">E-mail</label>
+            <input type="email" id="loginEmail" placeholder="seu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Senha</label>
+            <input type="password" id="loginPassword" placeholder="Sua senha" required />
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Entrar</button>
+        </form>
+        <p class="auth-toggle">
+          Ainda não tem conta? <a id="showRegister">Cadastre-se</a>
+        </p>
+      </div>
+      <div id="registerForm" style="display:none;">
+        <h2>Crie sua conta</h2>
+        <p class="auth-subtitle">É rápido e gratuito</p>
+        <div class="auth-error" id="registerError"></div>
+        <form id="registerFormEl">
+          <div class="form-group">
+            <label for="regName">Nome completo</label>
+            <input type="text" id="regName" placeholder="Seu nome" required />
+          </div>
+          <div class="form-group">
+            <label for="regEmail">E-mail</label>
+            <input type="email" id="regEmail" placeholder="seu@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Senha</label>
+            <input type="password" id="regPassword" placeholder="Mínimo 6 caracteres" required minlength="6" />
+          </div>
+          <div class="form-group">
+            <label for="regPhone">Telefone / WhatsApp (opcional)</label>
+            <input type="tel" id="regPhone" placeholder="(11) 90000-0000" />
+          </div>
+          <div class="form-group">
+            <label for="regLocation">Cidade / Localização</label>
+            <div class="location-row">
+              <input type="text" id="regLocation" placeholder="Ex.: Campinas, SP" required />
+              <button type="button" class="btn-locate" data-locate="reg" title="Usar minha localização">📍</button>
+            </div>
+            <input type="hidden" id="regLat" />
+            <input type="hidden" id="regLng" />
+            <small class="form-note">Toque em 📍 para detectar sua localização — assim recomendamos só as profissionais mais próximas.</small>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Criar conta</button>
+        </form>
+        <p class="auth-toggle">
+          Já tem conta? <a id="showLogin">Faça login</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <footer class="footer">
+    <p>&copy; 2026 <strong>Repair Girls</strong> — Todos os direitos reservados.</p>
+    <p style="margin-top:0.5rem;">Feito com 💖 por mulheres, para mulheres.</p>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Filtro de produtos por categoria
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        productCards.forEach(card => {
+          const cat = card.getAttribute('data-category');
+          card.classList.toggle('is-hidden', filter !== 'all' && cat !== filter);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -17,6 +17,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Início</a></li>
       <li><a href="como-funciona.html">Como Funciona</a></li>
+      <li><a href="materiais.html">Materiais</a></li>
       <li><a href="contato.html" class="active">SAQ &amp; Contato</a></li>
       <li><a href="#" class="btn-login-nav" id="openLogin">Entrar</a></li>
     </ul>
@@ -111,7 +112,9 @@
           <span class="arrow">▼</span>
         </button>
         <div class="faq-answer">
-          Atualmente atendemos exclusivamente na cidade de Santo André — SP. Estamos em expansão e em breve chegaremos a outras cidades da região do ABC e Grande São Paulo!
+          Atualmente atendemos as principais cidades do Brasil. Ao agendar, indicamos a profissional
+          mais próxima da sua localização — você pode conferir cidade, bairros atendidos e avaliações
+          no perfil de cada uma. Estamos sempre em expansão para novas regiões!
         </div>
       </div>
 
@@ -247,6 +250,20 @@
             <label for="regPassword">Senha</label>
             <input type="password" id="regPassword" placeholder="Mínimo 6 caracteres" required minlength="6" />
           </div>
+          <div class="form-group">
+            <label for="regPhone">Telefone / WhatsApp (opcional)</label>
+            <input type="tel" id="regPhone" placeholder="(11) 90000-0000" />
+          </div>
+          <div class="form-group">
+            <label for="regLocation">Cidade / Localização</label>
+            <div class="location-row">
+              <input type="text" id="regLocation" placeholder="Ex.: Campinas, SP" required />
+              <button type="button" class="btn-locate" data-locate="reg" title="Usar minha localização">📍</button>
+            </div>
+            <input type="hidden" id="regLat" />
+            <input type="hidden" id="regLng" />
+            <small class="form-note">Toque em 📍 para detectar sua localização — assim recomendamos só as profissionais mais próximas.</small>
+          </div>
           <button type="submit" class="btn btn-primary" style="width:100%;">Criar conta</button>
         </form>
         <p class="auth-toggle">
@@ -259,7 +276,7 @@
   <div class="toast" id="toast"></div>
 
   <footer class="footer">
-    <p>&copy; 2025 <strong>Repair Girls</strong> — Todos os direitos reservados.</p>
+    <p>&copy; 2026 <strong>Repair Girls</strong> — Todos os direitos reservados.</p>
     <p style="margin-top:0.5rem;">Feito com 💖 por mulheres, para mulheres.</p>
   </footer>
 
