@@ -17,6 +17,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="active">Início</a></li>
       <li><a href="como-funciona.html">Como Funciona</a></li>
+      <li><a href="materiais.html">Materiais</a></li>
       <li><a href="contato.html">SAQ &amp; Contato</a></li>
       <li><a href="#" class="btn-login-nav" id="openLogin">Entrar</a></li>
     </ul>
@@ -90,6 +91,18 @@
         <p>Nossa equipe de atendimento é composta por mulheres prontas para te ajudar em cada etapa.</p>
       </div>
     </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- PROFISSIONAIS -->
+  <section class="section">
+    <h2 class="section-title">Conheça nossas profissionais</h2>
+    <p class="section-subtitle">
+      Mulheres qualificadas, verificadas e prontas para cuidar da sua casa.
+      Toque em uma profissional para ver o perfil completo.
+    </p>
+    <div class="cards-grid" data-pro-grid></div>
   </section>
 
   <hr class="section-divider" />
@@ -176,6 +189,20 @@
             <label for="regPassword">Senha</label>
             <input type="password" id="regPassword" placeholder="Mínimo 6 caracteres" required minlength="6" />
           </div>
+          <div class="form-group">
+            <label for="regPhone">Telefone / WhatsApp (opcional)</label>
+            <input type="tel" id="regPhone" placeholder="(11) 90000-0000" />
+          </div>
+          <div class="form-group">
+            <label for="regLocation">Cidade / Localização</label>
+            <div class="location-row">
+              <input type="text" id="regLocation" placeholder="Ex.: Campinas, SP" required />
+              <button type="button" class="btn-locate" data-locate="reg" title="Usar minha localização">📍</button>
+            </div>
+            <input type="hidden" id="regLat" />
+            <input type="hidden" id="regLng" />
+            <small class="form-note">Toque em 📍 para detectar sua localização — assim recomendamos só as profissionais mais próximas.</small>
+          </div>
           <button type="submit" class="btn btn-primary" style="width:100%;">Criar conta</button>
         </form>
         <p class="auth-toggle">
@@ -195,6 +222,7 @@
   </footer>
 
   <script src="js/auth.js"></script>
+  <script src="js/professionals.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
